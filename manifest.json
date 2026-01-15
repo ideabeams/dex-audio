@@ -1,15 +1,17 @@
 {
   "short_name": "DexRadio",
   "name": "DexRadio Retro Remote",
-  "icons": [
+    "icons": [
+  {
+    "src": "./icon.png",
+    "type": "image/png",
+    "sizes": "192x192",
+    "purpose": "any maskable"
+  }
+]
+    
     {
-      "src": "icon.png",
-      "type": "image/png",
-      "sizes": "192x192",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icon.png",
+      "src": "./icon.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any maskable"
@@ -19,4 +21,5 @@
   "display": "standalone",
   "theme_color": "#1a1a1a",
   "background_color": "#0a0a0a"
+
 }

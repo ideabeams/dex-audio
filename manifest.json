@@ -1,6 +1,6 @@
 {
-  "short_name": "DexRadio",
-  "name": "DexRadio Retro Remote",
+  "short_name": "DexLights",
+  "name": "Dex Lights Controller",
   "icons": [
     {
       "src": "./icon.png",

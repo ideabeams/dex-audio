@@ -16,10 +16,11 @@
       "sizes": "512x512",
       "purpose": "any maskable"
     }
-  ],
+  
   "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#1a1a1a",
   "background_color": "#0a0a0a"
 
 }
+

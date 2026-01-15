@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>DexRadio Retro Remote</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a1a1a">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    <header>
+        <div class="brand">DEX-AUDIO <span>v2.0</span></div>
+        <button id="connectBtn" class="btn-connect">INITIALIZE BLE LINK</button>
+        <div id="status">OFFLINE</div>
+    </header>
+    <nav class="tabs">
+        <button class="tab-link active" onclick="openTab('Remote')">TUNER</button>
+        <button class="tab-link" onclick="openTab('Stations')">CHANNELS</button>
+        <button class="tab-link" onclick="openTab('Settings')">SYSTEM</button>
+    </nav>
+    <main id="Remote" class="tab-content active">
+        <div class="hifi-panel">
+            <div class="display-window">
+                <div class="label">SIGNAL MONITOR</div>
+                <div id="nowPlaying" class="nixie-text">WAITING...</div>
+            </div>
+            <div class="tuning-container">
+                <div class="needle"></div>
+                <div id="stationScroll" class="dial-scale"></div>
+            </div>
+            <div class="knob-section">
+                <div class="knob-group">
+                    <div class="knob-label">VOLUME</div>
+                    <div class="knob-container">
+                        <div class="knob" id="volumeKnob"></div>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button class="retro-btn" onclick="sendCommand('PREV')">PREV</button>
+                    <button class="retro-btn power" onclick="sendCommand('STOP')">STOP</button>
+                    <button class="retro-btn" onclick="sendCommand('NEXT')">NEXT</button>
+                </div>
+            </div>
+            <div class="mode-selector">
+                <button class="mode-btn" onclick="sendCommand('RADIO')">WIFI RADIO</button>
+                <button class="mode-btn" onclick="sendCommand('BT')">BT SPEAKER</button>
+            </div>
+        </div>
+    </main>
+    <section id="Stations" class="tab-content">
+        <div class="hifi-panel">
+            <h3>CHANNEL LIBRARY</h3>
+            <button class="retro-btn small" onclick="refreshList()">REFRESH FROM HARDWARE</button>
+            <ul id="stationList" class="retro-list"></ul>
+            <div class="input-group">
+                <h4>ADD CHANNEL</h4>
+                <input type="text" id="newStationName" placeholder="NAME">
+                <input type="text" id="newStationUrl" placeholder="URL">
+                <button class="retro-btn primary" onclick="addStation()">SAVE TO MEMORY</button>
+            </div>
+        </div>
+    </section>
+    <section id="Settings" class="tab-content">
+        <div class="hifi-panel">
+            <h3>AUDIO ENGINE</h3>
+            <div class="setting-row">
+                <label>BUFFER (KB):</label>
+                <input type="number" id="bufferSize" value="32">
+                <button class="retro-btn small" onclick="saveBuffer()">APPLY</button>
+            </div>
+            <hr class="divider">
+            <h3>WIFI CREDENTIALS</h3>
+            <input type="text" id="wifiSSID" placeholder="SSID">
+            <input type="password" id="wifiPass" placeholder="PASSWORD">
+            <button class="retro-btn danger" onclick="sendWiFi()">UPDATE & REBOOT</button>
+        </div>
+    </section>
+    <script src="app.js"></script>
+</body>
+</html>

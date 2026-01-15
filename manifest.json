@@ -1,6 +1,6 @@
 {
-  "short_name": "DexLights",
-  "name": "Dex Lights Controller",
+  "short_name": "Dex Audio",
+  "name": "Dex Audio Controller",
   "icons": [
     {
       "src": "./icon.png",
@@ -20,3 +20,4 @@
   "theme_color": "#1a1a1a",
   "background_color": "#0a0a0a"
 }
+
